@@ -7,7 +7,7 @@ RUN apt-get update && \
 RUN docker-php-ext-install pgsql pdo pdo_mysql pdo_pgsql
 RUN docker-php-ext-install xml bcmath mbstring
 RUN docker-php-ext-install opcache gd zip curl
-RUN pecl install memcached redis
-RUN docker-php-ext-enable memcached redis
+RUN pecl install memcached memcache redis
+RUN docker-php-ext-enable memcached memcache redis
 
 RUN apt remove -y --autoremove gcc *-dev
