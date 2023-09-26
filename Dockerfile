@@ -5,9 +5,9 @@ RUN apt-get update && \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pgsql pdo pdo_mysql pdo_pgsql
-RUN docker-php-ext-install xml bcmath mbstring
+RUN docker-php-ext-install intl xml bcmath mbstring
 RUN docker-php-ext-install opcache gd curl
-RUN pecl install memcache redis
+RUN pecl install memcache redis apcu
 RUN docker-php-ext-enable memcache redis
 
 RUN apt remove -y --autoremove gcc *-dev
