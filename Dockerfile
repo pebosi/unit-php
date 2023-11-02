@@ -11,6 +11,7 @@ RUN apt-get update && \
 RUN docker-php-ext-install pgsql pdo pdo_mysql pdo_pgsql
 RUN docker-php-ext-install intl xml bcmath mbstring
 RUN docker-php-ext-install opcache gd curl
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-png --with-jpeg --with-webp --with-avif
 RUN pecl install memcache redis apcu
 RUN docker-php-ext-enable memcache redis apcu
 
