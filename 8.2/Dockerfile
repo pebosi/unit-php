@@ -13,7 +13,7 @@ RUN docker-php-ext-install pgsql pdo pdo_mysql pdo_pgsql
 RUN docker-php-ext-install intl xml bcmath mbstring
 RUN docker-php-ext-install opcache curl
 
-RUN docker-php-ext-configure gd --enable-gd --prefix=/usr --with-webp --with-jpeg --with-xpm --with-freetype --with-avif
+RUN docker-php-ext-configure gd --prefix=/usr --with-webp --with-jpeg --with-xpm --with-freetype --with-avif
 RUN docker-php-ext-install -j$(nproc) gd
 
 RUN pecl install memcache redis apcu
